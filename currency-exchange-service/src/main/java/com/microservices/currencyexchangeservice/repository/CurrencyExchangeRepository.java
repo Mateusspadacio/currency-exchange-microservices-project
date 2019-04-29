@@ -8,5 +8,5 @@ import com.microservices.currencyexchangeservice.model.ExchangeValue;
 @Repository
 public interface CurrencyExchangeRepository extends JpaRepository<ExchangeValue, Long>{
 
-	public ExchangeValue findByFromAndTo(String from, String to);
+	public ExchangeValue findByFromIgnoreCaseAndToIgnoreCase(String from, String to);
 }
