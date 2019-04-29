@@ -16,7 +16,7 @@ public class CurrencyConversionService {
 	public CurrencyConversion convert(String from, String to, BigDecimal quantity) {
 		CurrencyConversion response = currencyExchangeServiceProxy.retrieveExchangeValue(from, to);
 
-		return new CurrencyConversion(response.getId(), from, to, response.getConversionMultiple(), quantity,
+		return new CurrencyConversion(response.getId(), response.getFrom(), response.getTo(), response.getConversionMultiple(), quantity,
 				quantity.multiply(response.getConversionMultiple()), response.getPort());
 
 	}
